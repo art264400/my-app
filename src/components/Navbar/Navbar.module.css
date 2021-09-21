@@ -6,4 +6,17 @@
 .nav a {
       color: red;
       font-size: 30px;
+      text-decoration: none;
+      padding-left: 10px;
   }
+  .nav a:hover {
+    color: blue;
+    font-size: 35px;
+  }
+
+.nav a.activeLink {
+  color: black;
+  font-size: 30px;
+}
+
+

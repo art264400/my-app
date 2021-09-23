@@ -8,17 +8,17 @@ import Navbar from './components/Navbar/Navbar';
 import News from './components/News/News';
 import Profile from './components/Profile/Profile';
 
-const App = () => {
+const App = (props) => { 
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Navbar />
         <div className="app-wrapper-content">
-          <Route path='/Dialogs' component={Dialogs} />
-          <Route path='/Profile' component={Profile} />
-          <Route path='/Music' component={Music} />
-          <Route path='/News' component={News} />
+          <Route path='/Dialogs'  render={ () => <Dialogs dialogsData={props.dialogsData} messageData={props.messageData} /> } />
+          <Route path='/Profile' render={ () => <Profile  posts={props.posts}/> } />
+          <Route path='/Music' render={ () => <Music /> } />
+          <Route path='/News' render={ () => <News /> } />
         </div>
       </div>
     </BrowserRouter>

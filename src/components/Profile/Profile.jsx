@@ -6,7 +6,7 @@ import c from './Profile.module.css'
 const Profile = (props) => {
   return <div className={c.content}>
     <PersonalInfo />
-    <Posts posts={props.profilePage.postsData}/>
+    <Posts posts={props.profilePage.postsData} addPost={props.addPost}/>
   </div>
 }
 

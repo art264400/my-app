@@ -1,3 +1,5 @@
+import { rerenderEnireTree } from "../render";
+
 let dialogsData = [{ id: 1, name: 'Dimych' }, { id: 2, name: 'Arthur' }, { id: 3, name: 'Игорь' }, { id: 4, name: 'Вероника' }, { id: 5, name: 'Рулсан' }];
 let messagesData = [{ content: 'Привет, как дела'}, { content: 'Что делаешь'}, { content: 'займи 5к'}, { content: 'как там'}];
 let postsData = [{ message: "1 пост", likeCount: 10 }, { message: "2 пост ", likeCount: 20 }, { message: "3 пост", likeCount: 30 }, { message: "gfds", likeCount: 12312410 }];
@@ -20,4 +22,15 @@ let state ={
         sitebarDate
     }
 }
+
+export let addPost = (postMessage) => {
+    debugger
+    let newPost = {
+        likeCount: 5,
+        message: postMessage
+    }
+    state.profilePage.postsData.push(newPost);
+    rerenderEnireTree(state);
+}
+
 export default state;

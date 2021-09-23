@@ -1,0 +1,14 @@
+.content{
+   
+}
+
+.image{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.images{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 50px)
+}

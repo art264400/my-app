@@ -1,0 +1,9 @@
+.content{
+    padding: 20px;
+}
+
+.friendsLabel{
+    text-transform: uppercase;
+    text-align: center;
+    font: 1.5em bold;
+}

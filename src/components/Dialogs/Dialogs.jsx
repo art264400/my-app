@@ -21,7 +21,7 @@ const Dialogs = (props) => {
   console.log(props)
     return (<Dialog name={e.name} id={e.id} />)
   })
-  let messageDataNew=props.messageData.map(e => {
+  let messageDataNew=props.messagesData.map(e => {
     return (<Message content={e.content}/>)
   })
 

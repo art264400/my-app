@@ -9,14 +9,18 @@ import News from './components/News/News';
 import Profile from './components/Profile/Profile';
 
 const App = (props) => { 
+  console.log(props)
+
+  
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Navbar />
+        <Navbar sitebarPage={props.state.sitebarPage}/>
         <div className="app-wrapper-content">
-          <Route path='/Dialogs'  render={ () => <Dialogs dialogsData={props.dialogsData} messageData={props.messageData} /> } />
-          <Route path='/Profile' render={ () => <Profile  posts={props.posts}/> } />
+          <Route path='/Dialogs'  render={ () => <Dialogs dialogsData={props.state.dialogsPage.dialogsData} messagesData={props.state.dialogsPage.messagesData} /> } />
+          <Route path='/Profile' render={ () => <Profile  profilePage={props.state.profilePage}/> } />
           <Route path='/Music' render={ () => <Music /> } />
           <Route path='/News' render={ () => <News /> } />
         </div>

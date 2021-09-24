@@ -9,7 +9,6 @@ import News from './components/News/News';
 import Profile from './components/Profile/Profile';
 
 const App = (props) => { 
-  debugger
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -17,7 +16,7 @@ const App = (props) => {
         <Navbar sitebarPage={props.state.sitebarPage}/>
         <div className="app-wrapper-content">
           <Route path='/Dialogs'  render={ () => <Dialogs dialogsData={props.state.dialogsPage.dialogsData} messagesData={props.state.dialogsPage.messagesData} /> } />
-          <Route path='/Profile' render={ () => <Profile  profilePage={props.state.profilePage} addPost={props.addPost}/> } />
+          <Route path='/Profile' render={ () => <Profile  profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/> } />
           <Route path='/Music' render={ () => <Music /> } />
           <Route path='/News' render={ () => <News /> } />
         </div>

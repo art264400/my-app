@@ -1,4 +1,6 @@
-import { rerenderEnireTree } from "../render";
+let rerenderEnireTree = () => {
+    console.log('перерисовал');
+}
 
 
 let dialogsData = [{ id: 1, name: 'Dimych' }, { id: 2, name: 'Arthur' }, { id: 3, name: 'Игорь' }, { id: 4, name: 'Вероника' }, { id: 5, name: 'Рулсан' }];
@@ -26,7 +28,7 @@ let state ={
 }
 window.state=state;
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         likeCount: 5,
         message: state.profilePage.newPostText
@@ -36,10 +38,14 @@ export let addPost = () => {
     rerenderEnireTree(state);
 }
 
-export let updateNewPostText = (postMessage) => {
+export const updateNewPostText = (postMessage) => {
     debugger;
     state.profilePage.newPostText = postMessage;
     rerenderEnireTree(state);
+}
+
+export const subscribe = (observer) =>{
+    rerenderEnireTree = observer;
 }
 
 
